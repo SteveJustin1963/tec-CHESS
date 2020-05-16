@@ -10,6 +10,9 @@ king ![](https://github.com/SteveJustin1963/tec-CHESS-7seg/blob/master/pics/king
 queen ![](https://github.com/SteveJustin1963/tec-CHESS-7seg/blob/master/pics/queen.png)
 pawn ![](https://github.com/SteveJustin1963/tec-CHESS-7seg/blob/master/pics/pawn.png)
 
+the DP splits 2 sides
+
+
 pieces moved with touch thru 2 thin silver wires across face of each led. op scan is faster than touch, the two will sync and latch a bit thats read back, same way a light pen reads back the raster, thru timing the press is derived.
 
 see https://www.epanorama.net/documents/pc/lightpen.html
