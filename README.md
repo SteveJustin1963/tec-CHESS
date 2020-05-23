@@ -18,3 +18,10 @@ pieces moved with touch thru 2 thin silver wires across face of each led. op sca
 see https://www.epanorama.net/documents/pc/lightpen.html
 
 
+https://en.wikipedia.org/wiki/1K_ZX_Chess
+
+http://users.ox.ac.uk/~uzdm0006/scans/1kchess/
+
+https://www.chessprogramming.org/1K_ZX_Chess
+
+http://ersby.blogspot.com/2011/03/chess-in-1k.html
