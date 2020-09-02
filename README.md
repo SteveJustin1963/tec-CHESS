@@ -25,3 +25,6 @@ http://users.ox.ac.uk/~uzdm0006/scans/1kchess/
 https://www.chessprogramming.org/1K_ZX_Chess
 
 http://ersby.blogspot.com/2011/03/chess-in-1k.html
+
+
+![](https://github.com/SteveJustin1963/tec-CHESS-7seg/blob/master/pics/chess-bd.png)
