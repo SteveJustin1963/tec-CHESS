@@ -28,3 +28,12 @@ http://ersby.blogspot.com/2011/03/chess-in-1k.html
 
 
 ![](https://github.com/SteveJustin1963/tec-CHESS-7seg/blob/master/pics/chess-bd.png)
+
+# tec-CHESS-BOT
+TEC-1 Chess playing with BOT gripper 
+
+
+# tec-CHESS-LCD 
+play on DAT's LCD display
+
+
