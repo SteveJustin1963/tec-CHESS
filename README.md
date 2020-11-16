@@ -8,7 +8,8 @@ king ![](https://github.com/SteveJustin1963/tec-CHESS-7seg/blob/master/pics/king
 queen ![](https://github.com/SteveJustin1963/tec-CHESS-7seg/blob/master/pics/queen.png)
 pawn ![](https://github.com/SteveJustin1963/tec-CHESS-7seg/blob/master/pics/pawn.png)
 
-* pieces hand moved on board following 7seg displayed 
+* pieces hand moved on board following 7seg displayed
+* https://github.com/SteveJustin1963/tec-SPEECH can say the moves and comments
 * code to be inspired by 1k code examples
 
 
