@@ -36,8 +36,7 @@ The minimax algorithm then chooses the move that maximizes the score for the cur
 Minimax a simple and effective approach for determining the best move in a two-player, zero-sum game, but it can be computationally expensive for larger games with many possible moves.
 
 ```
-:MINIMAX   \[   DEPTH   0   =   \[  SCORE   \]   \> \i   
-\\ base case: if depth is 0, return the score
+:MINIMAX   \[   DEPTH   0   =   \[  SCORE   \]   \> \i   \\ base case: if depth is 0, return the score
   MOVES   \@   \\ get a list of possible moves
   \[  \]   \> \j   \\ initialize the best score
   \i   1   +   \> DEPTH   \\ increment the depth
@@ -59,7 +58,8 @@ To complete the minimax algorithm, you will need to define functions: then you c
 ## DO_MOVE: 
 This function should take a move as input and update the board state to reflect the move.
 ```
-:DO_MOVE   \[  MOVE   ]   \[    MOVE   \@   \\ get the starting position of the piece  \[  \]   \> \i   \\ initialize the current position
+:DO_MOVE   \[  MOVE   ]   \[    MOVE   \@   \\ get the starting position of the piece  
+\[  \]   \> \i   \\ initialize the current position
   \i   MOVE   -   \> \j   \\ calculate the distance to move
   \j   0   >   \[  \]   \[  \]   \\ move forward if j > 0, otherwise move backward
   \[  \i   \j   +   \]   STORE   \\ update the position of the piece
