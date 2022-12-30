@@ -8,21 +8,13 @@ king ![](https://github.com/SteveJustin1963/tec-CHESS-7seg/blob/master/pics/king
 queen ![](https://github.com/SteveJustin1963/tec-CHESS-7seg/blob/master/pics/queen.png)
 pawn ![](https://github.com/SteveJustin1963/tec-CHESS-7seg/blob/master/pics/pawn.png)
 
-## project
-- pieces hand moved on board following 7seg displayed
+## hardware
+- pieces hand moved on board following 7seg displayed or DAT's LCD display
 - https://github.com/SteveJustin1963/tec-SPEECH can say the moves and comments
-- code to be inspired by 1k code examples
-- try in MINT
-
-## tec-CHESS-BOT
 - played with BOT gripper 
-- code to be inspired by 1k code examples
 
-
-
-## tec-CHESS-LCD 
-play on DAT's LCD display
-* pieces to be moved by bot gripper
+## software
+-MINT
 
 
 ## create an algorithm to play chess. 
