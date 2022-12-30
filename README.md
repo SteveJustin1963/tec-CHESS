@@ -135,84 +135,9 @@ The given program is an implementation of the Alpha-beta pruning algorithm for a
 The ALPHABETA function is responsible for searching the game tree and evaluating the different board positions. It takes three inputs: DEPTH, ALPHA, and BETA. DEPTH is a 16-bit integer that encodes the current depth in the search tree. ALPHA and BETA are 16-bit integers that encode the current alpha and beta values.
 
 The MAIN function is the entry point of the program. It takes three inputs: BOARD_STATE, DEPTH, and ALPHA. BOARD_STATE is a 16-bit integer that encodes the current state of the game board. DEPTH is a 16-bit integer that encodes the maximum depth of the search tree. ALPHA is a 16-bit integer that encodes the initial alpha value.
+ 
 
-```
-:ALPHABETA   \[   DEPTH   0   =   \[  SCORE   \]   \> \i   \\ base case: if depth is 0, return the score
-  ALPHA   -9999   \>   \\ initialize alpha
-  BETA   9999   \>   \\ initialize beta
-  MOVES   \@   \\ get a list of possible moves
-  \[  \]   \> \j   \\ initialize the best score
-  \i   1   +   \> DEPTH   \\ increment the depth
-  \[  \]   \> \k   \\ initialize the score for the current move
-  \[  \]   \> \l   \\ initialize the current move
-  MOVES   \[  \]   \> \m   \\ iterate through the moves
-  \m   \l   \>   \\ get the next move
-  \[  \l   \]   DO_MOVE   \\ make the move
-  ALPHABETA   \> \k   \\ evaluate the resulting board state
-  UNDO_MOVE   \\ undo the move
-  \k   \j   >   \j   \k   \> \j   \\ update the best score
-  \k   ALPHA   >   ALPHA   \k   \> ALPHA   \\ update alpha
-  \k   BETA   <   BETA   \k   \> BETA   \\ update beta
-  ALPHA   BETA   >=   \[  \j   \]   ;   \\ prune the remaining branches
-  \]   \j   ;
 
-:MAIN   \[  BOARD_STATE  DEPTH  ]   ALPHABETA
-```
-There are several things missing from this program that would be necessary to make it more complete:
-
-The DO_MOVE, UNDO_MOVE, MOVES, and SCORE functions are not defined. These functions are necessary for the ALPHABETA function to work properly. DO_MOVE should make a move on the game board, UNDO_MOVE should undo the previous move, MOVES should generate a list of possible moves that can be made from the current board state, and SCORE should calculate a score for the current board state based on factors such as the material balance (difference in the number of pieces), the position of the pieces on the board, and the mobility of the pieces.
-
-The MAX_PLAYER and MIN_PLAYER functions are not defined. These functions should return 1 if the current player is the max player (i.e. the maximizing player) and 0 if the current player is the min player (i.e. the minimizing player).
-
-The ALPHABETA function does not properly handle the base case when DEPTH is equal to 0. In this case, the function should return the score of the current board state rather than calling itself recursively.
-
-The ALPHABETA function does not properly handle the case when ALPHA is greater than or equal to BETA. In this case, the function should immediately return the value of ALPHA or BETA rather than continuing to search the game tree.
-
-revised program with the four corrections applied:
-```
-:DO_MOVE   \[   MOVE   ]   ;   \\ make the specified move on the game board
-:UNDO_MOVE   \\ undo the previous move
-:MOVES   \[   ]   ;   \\ generate a list of possible moves from the current board state
-:SCORE   \[   ]   ;   \\ calculate a score for the current board state
-:MAX_PLAYER   \[   ]   ;   \\ return 1 if the current player is the max player, 0 otherwise
-:MIN_PLAYER   \[   ]   ;   \\ return 1 if the current player is the min player, 0 otherwise
-
-:ALPHABETA   \[   DEPTH   0   =   \[  SCORE   \]   \> \i   \\ base case: if depth is 0, return the score
-  ALPHA   -9999   \>   \\ initialize alpha
-  BETA   9999   \>   \\ initialize beta
-  MOVES   \@   \\ get a list of possible moves
-  \[  \]   \> \j   \\ initialize the best score
-  \i   1   +   \> DEPTH   \\ increment the depth
-  \[  \]   \> \k   \\ initialize the score for the current move
-  \[  \]   \> \l   \\ initialize the current move
-  MOVES   \[  \]   \> \m   \\ iterate through the moves
-  \m   \l   \>   \\ get the next move
-  \[  \l   \]   DO_MOVE   \\ make the move
-  ALPHABETA   \> \k   \\ evaluate the resulting board state
-  UNDO_MOVE   \\ undo the move
-  \k   \j   >   \j   \k   \> \j   \\ update the best score
-  \k   ALPHA   >   ALPHA   \k   \> ALPHA   \\ update alpha
-  \k   BETA   <   BETA   \k   \> BETA   \\ update beta
-  ALPHA   BETA   >=   \[  \j   \]   ;   \\ prune the remaining branches
-  \]   \j   ;
-
-:MAIN   \[  BOARD_STATE  DEPTH  ]   ALPHABETA
-```
-To complete the program, you need to define the functions that are missing: DO_MOVE, UNDO_MOVE, MOVES, SCORE, MAX_PLAYER, and MIN_PLAYER.
-
-DO_MOVE should take a move as an input and update the game board to reflect that move.
-
-UNDO_MOVE should undo the previous move and restore the board to its original state.
-
-MOVES should generate a list of possible moves that can be made from the current board state.
-
-SCORE should calculate a score for the current board state based on factors such as the material balance (difference in the number of pieces), the position of the pieces on the board, and the mobility of the pieces.
-
-MAX_PLAYER should return 1 if the current player is the max player (i.e., the player trying to maximize the score), and 0 otherwise.
-
-MIN_PLAYER should return 1 if the current player is the min player (i.e., the player trying to minimize the score), and 0 otherwise.
-
-Here are the corrections to the code:
 ```
 :DO_MOVE [ MOVE ] ; \ make the specified move on the game board
 :UNDO_MOVE \ undo the previous move
@@ -242,6 +167,18 @@ ALPHA BETA >= [ \j ] ; \ prune the remaining branches
 
 :MAIN [ BOARD_STATE DEPTH ] ALPHABETA
 ```
+There are several things missing from this program that would be necessary to make it more complete:
+
+The DO_MOVE, UNDO_MOVE, MOVES, and SCORE functions are not defined. These functions are necessary for the ALPHABETA function to work properly. DO_MOVE should make a move on the game board, UNDO_MOVE should undo the previous move, MOVES should generate a list of possible moves that can be made from the current board state, and SCORE should calculate a score for the current board state based on factors such as the material balance (difference in the number of pieces), the position of the pieces on the board, and the mobility of the pieces.
+
+The MAX_PLAYER and MIN_PLAYER functions are not defined. These functions should return 1 if the current player is the max player (i.e. the maximizing player) and 0 if the current player is the min player (i.e. the minimizing player).
+
+The ALPHABETA function does not properly handle the base case when DEPTH is equal to 0. In this case, the function should return the score of the current board state rather than calling itself recursively.
+
+The ALPHABETA function does not properly handle the case when ALPHA is greater than or equal to BETA. In this case, the function should immediately return the value of ALPHA or BETA rather than continuing to search the game tree.
+
+
+
 ## 1k chess
 sudo code
 ```
