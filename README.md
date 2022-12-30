@@ -322,6 +322,20 @@ FUNCTION AddList():
 ADD to current legal move list another entry on the end
 END function
 ```
+## GA
+To write a genetic algorithm (GA) program for chess, you can follow these steps:
+
+1. Define the problem: In this case, the problem is to find a good chess strategy that can be used to play chess effectively.
+2. Define the parameters of the GA: This includes things like the size of the population, the number of generations, the selection method, the crossover rate, and the mutation rate.
+3. Represent the solutions: In this case, the solutions will be chess strategies. One way to represent a chess strategy is to use a set of rules or heuristics that dictate how the chess pieces should be moved.
+4. Create an initial population: The initial population should be a set of random chess strategies.
+5. Evaluate the fitness of each solution: To evaluate the fitness of a chess strategy, you can have it play against other strategies or against a human opponent and see how well it performs.
+6. Select the best solutions: Use the selection method to choose the best solutions from the current population. These solutions will be used to create the next generation of strategies.
+7. Crossover and mutation: Use the crossover rate to determine how often two solutions should be combined to create a new solution, and use the mutation rate to determine how often a solution should be modified slightly to create a new solution.
+8. Repeat the process: Use the new generation of solutions to repeat the process of evaluating fitness, selecting the best solutions, and generating new solutions until the desired number of generations has been reached.
+9. Choose the best solution: After the desired number of generations has been reached, choose the best-performing solution as the final chess strategy.
+
+
 
 
 
