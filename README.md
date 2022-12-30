@@ -13,14 +13,15 @@ queen ![](https://github.com/SteveJustin1963/tec-CHESS-7seg/blob/master/pics/que
 
 pawn ![](https://github.com/SteveJustin1963/tec-CHESS-7seg/blob/master/pics/pawn.png)
 
-* pieces hand moved on board following 7seg displayed
-* https://github.com/SteveJustin1963/tec-SPEECH can say the moves and comments
-* code to be inspired by 1k code examples
-
+## project
+- pieces hand moved on board following 7seg displayed
+- https://github.com/SteveJustin1963/tec-SPEECH can say the moves and comments
+- code to be inspired by 1k code examples
+- try in MINT
 
 ## tec-CHESS-BOT
-* played with BOT gripper 
-* code to be inspired by 1k code examples
+- played with BOT gripper 
+- code to be inspired by 1k code examples
 
 
 
@@ -36,13 +37,10 @@ play on DAT's LCD display
 
 ## Ref
 
-https://en.wikipedia.org/wiki/1K_ZX_Chess
-
-http://users.ox.ac.uk/~uzdm0006/scans/1kchess/
-
-https://www.chessprogramming.org/1K_ZX_Chess
-
-http://ersby.blogspot.com/2011/03/chess-in-1k.html
+- https://en.wikipedia.org/wiki/1K_ZX_Chess
+- http://users.ox.ac.uk/~uzdm0006/scans/1kchess/
+- https://www.chessprogramming.org/1K_ZX_Chess
+- http://ersby.blogspot.com/2011/03/chess-in-1k.html
 
 ## Iterate
 https://www.epanorama.net/documents/pc/lightpen.html
