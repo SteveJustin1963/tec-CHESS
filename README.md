@@ -241,6 +241,88 @@ ALPHA BETA >= [ \j ] ; \ prune the remaining branches
 
 :MAIN [ BOARD_STATE DEPTH ] ALPHABETA
 ```
+## 1k chess
+sudo code
+```
+FUNCTION Kybd():
+SETUP machine control of keyboard to accept only key codes from 29 and 38
+DEFINE subroutine TKP()
+SCAN keyboard for appropriate key depression
+TRANSLATE alpha-numeric entry to board address
+END subroutine
+END function
+
+FUNCTION STR(board_address):
+DETERMINE whether contents at board_address are:
+DIFFERENT from current mover colour
+EMPTY
+BOARD SURROUND
+SAME colour as current mover
+END function
+
+FUNCTION Piece():
+SETUP pointers to possible move tables and number of steps and directions
+END function
+
+FUNCTION Move():
+GENERATE list of all legal moves available to piece under consideration
+END function
+
+FUNCTION Pawn():
+GENERATE list of all possible legal moves including initial double moves
+END function
+
+FUNCTION Check():
+LOCATE current mover's King and store position in attack register
+END function
+
+FUNCTION Square Attack():
+DETERMINE whether opposition can attack square in attack register
+END function
+
+FUNCTION Score():
+EVALUATE move score based on:
+"To" position resulting in taking of a piece
+"From" position being attacked
+"To" position being attacked
+"To" position enabling computer to obtain a check
+"From" position being defended
+COMPARE current move score to previous best
+IF superior, SAVE move as best so far
+END function
+
+FUNCTION Shift():
+MOVE current move list to safe position while check is being evaluated
+RECOVER move list on completion
+USE to shift best move so far up into move list
+END function
+
+FUNCTION PSC():
+ASSIGN score to chess piece: Q(5), R(4), B(3), N(2), P(1)
+END function
+
+FUNCTION MPScan():
+SCAN board for computer pieces
+USING Move and Score, DETERMINE all legal moves and SAVE best
+END function
+
+FUNCTION INC():
+DETERMINE whether a square is being attacked
+END function
+
+FUNCTION Driver():
+MAIN control logic, using all other subroutines to provide program control
+END function
+
+FUNCTION TestList():
+TEST to see if there are any moves in the move list
+END function
+
+FUNCTION AddList():
+ADD to current legal move list another entry on the end
+END function
+```
+
 
 
 ## Ref
