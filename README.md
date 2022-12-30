@@ -53,6 +53,76 @@ Minimax a simple and effective approach for determining the best move in a two-p
 :MAIN   \[  BOARD_STATE  DEPTH  ]   MIN
 ```
 
+To complete the minimax algorithm, you will need to define functions: then you can use the minimax algorithm to determine the best move for a player given a board state and a desired search depth.
+
+## DO_MOVE: 
+This function should take a move as input and update the board state to reflect the move.
+```
+:DO_MOVE   \[  MOVE   ]   \[    MOVE   \@   \\ get the starting position of the piece  \[  \]   \> \i   \\ initialize the current position
+  \i   MOVE   -   \> \j   \\ calculate the distance to move
+  \j   0   >   \[  \]   \[  \]   \\ move forward if j > 0, otherwise move backward
+  \[  \i   \j   +   \]   STORE   \\ update the position of the piece
+  \]   ;
+```
+This function takes a move as input and updates the board state to reflect the move by storing the new position of the piece at the appropriate location in memory. The MOVE input should be a 16-bit integer that encodes the starting and ending positions of the piece in the following format:
+```
+[8 bits for starting position][8 bits for ending position]
+```
+For example, if the starting position is 5 and the ending position is 10, the MOVE input would be #050A.
+
+
+
+## UNDO_MOVE: 
+This function should undo the previous move and restore the board state to its original state.
+```
+:UNDO_MOVE   \[    \[  \]   \> \i   \\ initialize the current position
+  MOVE_HISTORY   \@   \\ get the previous move from the history
+  \i   MOVE_HISTORY   -   \> \j   \\ calculate the distance to move
+  \j   0   >   \[  \]   \[  \]   \\ move forward if j > 0, otherwise move backward
+  \[  \i   \j   +   \]   STORE   \\ update the position of the piece
+  MOVE_HISTORY   \[  \]   \>   \\ remove the previous move from the history
+  \]   ;
+```
+This function restores the board state to its original state by updating the position of the piece based on the previous move stored in the MOVE_HISTORY array. The MOVE_HISTORY array should be a list of 16-bit integers that encode the starting and ending positions of the pieces in the same format as the MOVE input to the DO_MOVE function.
+
+To implement the UNDO_MOVE function, you will need to define the `MOVE_
+
+
+## MOVES: 
+This function should generate a list of possible moves that can be made from the current board state.
+```
+:MOVES   \[    \[  \]   \> \i   \\ initialize the list of moves
+  PIECES   \[  \]   \> \j   \\ iterate through the pieces
+  \[  \]   \> \k   \\ initialize the current position
+  \[  \]   \> \l   \\ initialize the destination position
+  \j   \k   \>   \\ get the current position of the piece
+  \[  \]   \> \m   \\ initialize the list of valid moves
+  \k   \l   \+   \l   \k   \-   \> \[  \]   \\ check all positions in the 8 cardinal and diagonal directions
+  VALID_POSITION   \@   \\ check if the destination is a valid position
+  \[  \]   \>   \\ do nothing if not a valid position
+  \[  \j   \l   \]   \m   \>   \\ add the move to the list of valid moves
+  \m   \i   \>   \\ update the list of moves
+  \]   \i   ;
+```
+This function generates a list of possible moves that can be made from the current board state by iterating through all of the pieces on the board and checking the positions in the 8 cardinal and diagonal directions for each piece. The PIECES array should be a list of 16-bit integers that encode the positions of the pieces on the board. The VALID_POSITION function should take a position as input and return 1 if the position is on the board and 0 if it is not.
+
+
+## SCORE: 
+This function should calculate a score for the current board state based on factors such as the material balance (difference in the number of pieces), the position of the pieces on the board, and the mobility of the pieces.
+```
+:SCORE   \[    \[  \]   \> \i   \\ initialize the score
+  PIECES   \[  \]   \> \j   \\ iterate through the pieces
+  \j   PIECE_VALUES   \@   \\ get the value of the piece
+  \i   \j   +   \> \i   \\ update the score
+  POSITION_VALUES   \@   \\ get the value of the position
+  \i   POSITION_VALUES   +   \> \i   \\ update the score
+  MOBILITY   \@   \\ get the mobility of the piece
+  \i   MOBILITY   +   \> \i   \\ update the score
+  \]   \i   ;
+```
+This function calculates a score for the current board state by adding up the values of the pieces, their positions, and their mobility. The PIECES array should be a list of 16-bit integers that encode the positions of the pieces on the board. The PIECE_VALUES array should be a list of 8-bit integers that encode the values of the different types of pieces (e.g. pawn = 1, knight = 3, bishop = 3, etc.). The POSITION_VALUES array should be a list of 8-bit integers that encode the values of the different positions on the board based on factors such as centralization and control of key squares. The MOBILITY function should take a piece and its position as input and return a value based on the number of legal moves the piece can make from that position.
+
+
 
 ## Alpha-beta pruning 
 is a technique that is used to optimize the minimax algorithm, which is a search algorithm that is often used in two-player, zero-sum games, such as chess, to determine the best move for a player. It works by eliminating branches of the search tree that cannot possibly affect the final result, reducing the number of nodes that need to be evaluated and improving the efficiency of the algorithm.
