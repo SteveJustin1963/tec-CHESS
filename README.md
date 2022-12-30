@@ -36,7 +36,8 @@ The minimax algorithm then chooses the move that maximizes the score for the cur
 Minimax a simple and effective approach for determining the best move in a two-player, zero-sum game, but it can be computationally expensive for larger games with many possible moves.
 
 ```
-:MINIMAX   \[   DEPTH   0   =   \[  SCORE   \]   \> \i   \\ base case: if depth is 0, return the score
+:MINIMAX   \[   DEPTH   0   =   \[  SCORE   \]   \> \i   
+\\ base case: if depth is 0, return the score
   MOVES   \@   \\ get a list of possible moves
   \[  \]   \> \j   \\ initialize the best score
   \i   1   +   \> DEPTH   \\ increment the depth
