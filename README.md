@@ -331,6 +331,8 @@ END function
 - http://users.ox.ac.uk/~uzdm0006/scans/1kchess/
 - https://www.chessprogramming.org/1K_ZX_Chess
 - http://ersby.blogspot.com/2011/03/chess-in-1k.html
+- https://www.freecodecamp.org/news/simple-chess-ai-step-by-step-1d55a9266977/
+- 
 
 ## Iterate
 https://www.epanorama.net/documents/pc/lightpen.html
